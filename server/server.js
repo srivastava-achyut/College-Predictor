@@ -1,18 +1,21 @@
+require("dotenv").config();
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
 
-// Allow requests from frontend
 app.use(cors());
-
-// Parse JSON bodies
 app.use(express.json());
+const authRoutes = require("./routes/auth.routes");
+app.use("/api/auth", authRoutes);
 
-const predictRoutes = require("./routes/predict.routes");
-app.use("/api/predict", predictRoutes);
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("Mongo error:", err));
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });
