@@ -3,9 +3,17 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
+  const storedUser = localStorage.getItem("user");
+
+  let parsedUser = null;
+  try {
+    parsedUser = storedUser ? JSON.parse(storedUser) : null;
+  } catch (err) {
+    console.error("Invalid user in localStorage, clearing it");
+    localStorage.removeItem("user");
+  }
+
+  const [user, setUser] = useState(parsedUser);
 
   const login = (userData) => {
     setUser(userData);
@@ -15,6 +23,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
   };
 
   return (
@@ -24,4 +33,10 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used inside AuthProvider");
+  }
+  return context;
+};
