@@ -1,21 +1,13 @@
 [
   {
     "name": "NIT Trichy",
-    "branch": "CSE",
-    "cutoffs": {
-      "OPEN": {
-        "male": 1200,
-        "female": 2000
-      }
-    }
-  },
-  {
-    "name": "NIT Surathkal",
-    "branch": "CSE",
-    "cutoffs": {
-      "OPEN": {
-        "male": 1500,
-        "female": 2300
+    "branches": {
+      "CSE": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": 500, "closing": 1200 }
+          }
+        }
       }
     }
   }

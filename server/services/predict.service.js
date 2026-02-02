@@ -5,19 +5,32 @@ const predictColleges = (rank, category, gender) => {
   const dataPath = path.join(__dirname, "../data/cutoffs.json");
   const colleges = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
 
- // console.log("Incoming:", { rank, category, gender });
+  const results = [];
 
-  const result = colleges.filter(college => {
-    const cutoff = college.cutoffs?.[category]?.[gender];
-    //console.log("Checking college:", college.name, "cutoff:", cutoff);
+  colleges.forEach((college) => {
+    const branches = college.branches;
 
-    if (!cutoff) return false;
+    if (!branches) return;
 
-    return Number(rank) <= cutoff;
+    Object.keys(branches).forEach((branchName) => {
+      const branch = branches[branchName];
+      const cutoff =
+        branch?.[category]?.home?.[gender];
+
+      if (!cutoff) return;
+
+      if (rank >= cutoff.opening && rank <= cutoff.closing) {
+        results.push({
+          name: college.name,
+          branch: branchName,
+          opening: cutoff.opening,
+          closing: cutoff.closing,
+        });
+      }
+    });
   });
 
-  //console.log("Matched colleges:", result.map(c => c.name));
-  return result.map(c => c.name);
+  return results;
 };
 
 module.exports = { predictColleges };
