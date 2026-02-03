@@ -20,6 +20,7 @@ function Predict() {
         params: { rank, category, gender },
       });
 
+      console.log("Frontend result:", res.data.colleges);
       setResult(res.data.colleges || []);
     } catch (err) {
       console.error("Prediction error:", err);
@@ -34,7 +35,6 @@ function Predict() {
       <h2>College Predictor</h2>
 
       <form onSubmit={handleSubmit}>
-        {/* Rank */}
         <input
           type="number"
           placeholder="Enter Rank"
@@ -43,7 +43,6 @@ function Predict() {
           required
         />
 
-        {/* Category */}
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="OPEN">OPEN</option>
           <option value="OBC">OBC</option>
@@ -51,7 +50,6 @@ function Predict() {
           <option value="ST">ST</option>
         </select>
 
-        {/* Gender */}
         <select value={gender} onChange={(e) => setGender(e.target.value)}>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -60,22 +58,23 @@ function Predict() {
         <button type="submit">Predict</button>
       </form>
 
-      {/* Loading */}
       {loading && <p>Predicting colleges...</p>}
 
-      {/* Result */}
       {hasSearched && !loading && result.length > 0 && (
         <div>
           <h3>Predicted Colleges</h3>
           <ul>
-            {result.map((college, index) => (
-              <li key={index}>{college}</li>
+            {result.map((c, index) => (
+              <li key={index}>
+                <strong>{c.college}</strong> – {c.branch}
+                <br />
+                Rank Range: {c.opening} – {c.closing}
+              </li>
             ))}
           </ul>
         </div>
       )}
 
-      {/* No result */}
       {hasSearched && !loading && result.length === 0 && (
         <p>No colleges found</p>
       )}

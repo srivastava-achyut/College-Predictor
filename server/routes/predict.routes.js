@@ -5,17 +5,18 @@ const { jwtAuthMiddleware } = require("../utils/jwt");
 const { predictCollege } = require("../controllers/predict.controller");
 
 // test route (no auth)
-router.get("/test", predictCollege);
+
 
 // protected route
 router.get("/", jwtAuthMiddleware, (req, res) => {
   console.log("predict route hit");
-
+  console.log("USER:", req.user);
   res.json({
     success: true,
     message: "Predict route accessed",
     userId: req.user.id, // NOW SAFE
   });
 });
+router.get("/test", predictCollege);
 
 module.exports = router;
