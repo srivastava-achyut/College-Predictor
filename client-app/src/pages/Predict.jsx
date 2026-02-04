@@ -17,8 +17,9 @@ function Predict() {
 
     try {
       const res = await api.get("/predict", {
-        params: { rank, category, gender },
+        params: { rank, category, gender, _t: Date.now(),},
       });
+      console.log("FULL RESPONSE:", res.data);
 
       console.log("Frontend result:", res.data.colleges);
       setResult(res.data.colleges || []);
