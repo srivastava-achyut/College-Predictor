@@ -1,11 +1,181 @@
 [
   {
-    "name": "NIT Trichy",
+    "name": "Indian Institute of Technology Bhubaneswar",
+    "type": "IIT",
+    "state": "Odisha",
     "branches": {
-      "CSE": {
+      "Civil Engineering": {
         "OPEN": {
           "home": {
-            "male": { "opening": 500, "closing": 1200 }
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 10063, "closing": 16156 },
+            "female": { "opening": 19820, "closing": 23560 }
+          }
+        }
+      },
+      "Computer Science and Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 2344, "closing": 4162 },
+            "female": { "opening": 4082, "closing": 6467 }
+          }
+        }
+      },
+      "Electrical Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 5585, "closing": 8165 },
+            "female": { "opening": 10538, "closing": 16009 }
+          }
+        }
+      },
+      "Electronics and Communication Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 3873, "closing": 10965 },
+            "female": { "opening": 8804, "closing": 10965 }
+          }
+        }
+      },
+      "Engineering Physics": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 8840, "closing": 12466 },
+            "female": { "opening": 19737, "closing": 22403 }
+          }
+        }
+      },
+      "Mathematics and Computing": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 4174, "closing": 4708 },
+            "female": { "opening": 7679, "closing": 8804 }
+          }
+        }
+      },
+      "Mechanical Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 7759, "closing": 11678 },
+            "female": { "opening": 17144, "closing": 20366 }
+          }
+        }
+      },
+      "Metallurgical and Materials Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 11591, "closing": 16268 },
+            "female": { "opening": 21631, "closing": 22981 }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "Indian Institute of Technology Bombay",
+    "type": "IIT",
+    "state": "Maharashtra",
+    "branches": {
+      "Aerospace Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 1195, "closing": 2361 },
+            "female": { "opening": 4812, "closing": 5994 }
+          }
+        }
+      },
+      "Applied Geophysics": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 6087, "closing": 8343 },
+            "female": { "opening": 13688, "closing": 13761 }
+          }
+        }
+      },
+      "BS in Mathematics": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 753, "closing": 1067 },
+            "female": { "opening": 3432, "closing": 3432 }
+          }
+        }
+      },
+      "Chemical Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 501, "closing": 2454 },
+            "female": { "opening": 4813, "closing": 5969 }
+          }
+        }
+      },
+      "Civil Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 2666, "closing": 4095 },
+            "female": { "opening": 6085, "closing": 8597 }
+          }
+        }
+      },
+      "Computer Science and Engineering": {
+        "OPEN": {
+          "home": {
+            "male": { "opening": null, "closing": null },
+            "female": { "opening": null, "closing": null }
+          },
+          "other": {
+            "male": { "opening": 1, "closing": 66 },
+            "female": { "opening": 29, "closing": 296 }
           }
         }
       }
