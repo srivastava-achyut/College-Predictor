@@ -6,7 +6,7 @@ const app = express();
 const predictRoutes = require("./routes/predict.routes");
 
 app.use(cors({
-  origin:"https://https://college-predictor-frontend.onrender.com",
+  origin:"https://college-predictor-frontend.onrender.com",
   credentials:true,
 }));
 app.use(express.json());

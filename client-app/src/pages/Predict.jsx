@@ -17,7 +17,7 @@ function Predict() {
     setHasSearched(true);
     setLoading(true);
     try {
-      const res = await api.get("/predict", { params: { rank, category, gender, t: Date.now() } });
+      const res = await api.post("/predict", { params: { rank, category, gender, t: Date.now() } });
       setResult(res.data.colleges || []);
     } catch (err) {
       setResult([]);
