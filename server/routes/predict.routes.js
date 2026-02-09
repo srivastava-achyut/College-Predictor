@@ -5,6 +5,6 @@ const { jwtAuthMiddleware } = require("../utils/jwt");
 const { predictCollege } = require("../controllers/predict.controller");
 
 //THIS is the real predict route
-router.get("/", jwtAuthMiddleware, predictCollege);
+router.post("/", jwtAuthMiddleware, predictCollege);
 
 module.exports = router;
