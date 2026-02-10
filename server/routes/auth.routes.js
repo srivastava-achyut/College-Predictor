@@ -4,7 +4,7 @@ const User = require('../models/User')
 const otpStore = require('../utils/otpStore')
 const { jwtAuthMiddleware, generateToken } = require("../utils/jwt");
 
-
+const sendOtpEmail=require("../utils/sendOtp");
 
 router.post("/send-otp",async(req,res)=>{
     const {email,mobile} = req.body;
@@ -19,6 +19,9 @@ router.post("/send-otp",async(req,res)=>{
      otpStore.set(key, { otp, expiresAt });
 
   console.log("OTP for", key, "is", otp);
+  if(email){
+    await sendOtpEmail(email,otp);   
+  }
 
    res.json({ success: true, message: "OTP sent" });
 })
